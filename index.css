@@ -7,7 +7,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     color: #222;
-    background: #fff;
+    background: #ededed;
 }
 
 header {
@@ -26,11 +26,6 @@ p {
     word-spacing: 4px;
     line-height: 1.7;
     margin-bottom: 0;
-}
-
-h2 {
-    color: #4C6A2E;
-    font-weight: 600;
 }
 
 .container-fluid {
@@ -92,28 +87,33 @@ h2 {
     background: #4C6A2E;
     padding: 14px 20px;
     color: white;
+    transition: .3s;
 }
 
 .btns a:hover {
-    background: transparent;
-    border: 1px solid black;
-    color: black;
+    background: #34481f;
 }
 
 .btns button {
     padding: 10px 35px;
     background: transparent;
     border: 1px solid black;
+    transition: .3s;
 }
 
 .btns button:hover {
-    background: #4C6A2E;
+    background: black;
     color: white;
-    border-color: #4C6A2E;
+    border-color: black;
 }
 
 .cult .container {
     padding: 100px 12px;
+}
+
+.cult-heading {
+    color: #4C6A2E;
+    font-weight: 600;
 }
 
 .cult-card {
@@ -133,8 +133,12 @@ h2 {
     transition: .3s ease;
 }
 
-.card:hover {
-    transform: scale(1.04);
+.scale {
+    padding: 15px;
+}
+
+.scale:hover {
+    transform: scale(1.03);
 }
 
 .row {
@@ -142,7 +146,9 @@ h2 {
 }
 
 .card-img-top {
-    height: 350px;
+    height: 300px;
+    object-fit: cover;
+
 }
 
 .card-body {
@@ -163,10 +169,85 @@ h2 {
     padding: 8px 0px;
 }
 
+.quiz .container {
+    padding: 0px 12px 100px 12px;
+}
+
+.quiz-heading {
+    font-weight: 600;
+    color: black;
+    text-align: center;
+}
+
+.quiz .row {
+    justify-content: center;
+}
+
+.quiz-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 63%;
+    gap: 20px;
+}
+
+.quiz-col .card {
+    text-align: center;
+    justify-self: center;
+    border: 1px solid #ded1d1;
+    padding: 20px;
+}
+
+.card-header i {
+    font-size: 30px;
+    color: #4C6A2E;
+}
+
+.answer-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 30px;
+    align-items: center;
+}
+
+.back-button {
+    border: none;
+    background: transparent;
+}
+
+.next-button {
+    background-color: #4C6A2E;
+    padding: 8px 15px;
+    border: 1px solid #4C6A2E;
+    color: white;
+    transition: .3s;
+}
+
+.next-button:hover {
+    background-color: #34481f;
+}
+
+@media(max-width:991px) {
+    .quiz .col {
+        width: 100%;
+    }
+}
+
 @media(max-width:768px) {
 
     .cult-heading,
     .cult-para {
         text-align: center;
+    }
+
+    .quiz-col {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:480px) {
+    .answer-button {
+        flex-direction: column;
+        gap: 15px;
     }
 }
